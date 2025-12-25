@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كتب حسب دور النشر - مكتبة أثر</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            color: #333;
+            line-height: 1.6;
+            direction: rtl;
+        }
+
+        header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        header .logo img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-left: 15px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            background: #34495e;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: #1abc9c;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .page-header h2 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .publishers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .publisher-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .publisher-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .publisher-header {
+            height: 180px;
+            background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 40px;
+            padding: 20px;
+        }
+
+        .publisher-info {
+            padding: 25px;
+        }
+
+        .publisher-info h3 {
+            font-size: 1.6em;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .publisher-info .books-count {
+            color: #7f8c8d;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .publisher-info .description {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .view-books-btn {
+            display: block;
+            width: 100%;
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+
+        .view-books-btn:hover {
+            background: #2980b9;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-bottom: 30px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #2980b9;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .publishers-grid {
+                grid-template-columns: 1fr;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+
+            <div>
+                <h1>مكتبة أثر الإلكترونية</h1>
+                <p>وجهتك للمعرفة والثقافة</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="publishers.html" style="background:#1abc9c;">دور النشر</a></li>
+            <li><a href="science.html">الكتب العلمية</a></li>
+            <li><a href="history.html">الكتب التاريخية</a></li>
+            <li><a href="worldnovels.html">روايات عالمية</a></li>
+            <li><a href="about.html">حول المكتبة</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <a href="index.html" class="back-btn">← العودة للرئيسية</a>
+        
+        <div class="page-header">
+            <h2>🏢 كتب حسب دور النشر</h2>
+            <p>تصفح الكتب المصنفة حسب دور النشر المختلفة والمتميزة</p>
+        </div>
+
+        <div class="publishers-grid">
+            
+            <div class="publisher-card">
+                <div class="publisher-header">📚</div>
+                <div class="publisher-info">
+                    <h3>دار الشروق</h3>
+                    <div class="books-count">🕒 تأسست: 1960</div>
+                    <div class="books-count">📖 عدد الكتب: 24 كتاب</div>
+                    <p class="description">دار نشر مصرية رائدة تختص بنشر الكتب الثقافية والعلمية والأدبية</p>
+                    <button class="view-books-btn" onclick="window.location.href='publisher-shorouk.html'">عرض الكتب</button>
+                </div>
+            </div>
+            
+            <div class="publisher-card">
+                <div class="publisher-header">🏛️</div>
+                <div class="publisher-info">
+                    <h3>الهيئة المصرية العامة للكتاب</h3>
+                    <div class="books-count">🕒 تأسست: 1961</div>
+                    <div class="books-count">📖 عدد الكتب: 32 كتاب</div>
+                    <p class="description">هيئة حكومية مصرية تهدف لنشر الثقافة والمعرفة بين جميع فئات المجتمع</p>
+                    <button class="view-books-btn" onclick="window.location.href='publisher-egyptian.html'">عرض الكتب</button>
+                </div>
+            </div>
+            
+            <div class="publisher-card">
+                <div class="publisher-header">🌍</div>
+                <div class="publisher-info">
+                    <h3>دار الفكر العربي</h3>
+                    <div class="books-count">🕒 تأسست: 1975</div>
+                    <div class="books-count">📖 عدد الكتب: 18 كتاب</div>
+                    <p class="description">تختص بنشر الكتب الفكرية والفلسفية والاجتماعية باللغة العربية</p>
+                    <button class="view-books-btn" onclick="window.location.href='publisher-arabic.html'">عرض الكتب</button>
+                </div>
+            </div>
+            
+            <div class="publisher-card">
+                <div class="publisher-header">🔬</div>
+                <div class="publisher-info">
+                    <h3>دار العلم للملايين</h3>
+                    <div class="books-count">🕒 تأسست: 1945</div>
+                    <div class="books-count">📖 عدد الكتب: 28 كتاب</div>
+                    <p class="description">دار نشر لبنانية تختص بنشر الكتب العلمية والأدبية المترجمة</p>
+                    <button class="view-books-btn" onclick="window.location.href='publisher-science.html'">عرض الكتب</button>
+                </div>
+            </div>
+            
+            <div class="publisher-card">
+                <div class="publisher-header">📖</div>
+                <div class="publisher-info">
+                    <h3>دار المعارف</h3>
+                    <div class="books-count">🕒 تأسست: 1890</div>
+                    <div class="books-count">📖 عدد الكتب: 35 كتاب</div>
+                    <p class="description">أقدم دور النشر العربية، تختص بالموسوعات والكتب المرجعية</p>
+                    <button class="view-books-btn" onclick="window.location.href='publisher-maarif.html'">عرض الكتب</button>
+                </div>
+            </div>
+            
+            <div class="publisher-card">
+                <div class="publisher-header">🎯</div>
+                <div class="publisher-info">
+                    <h3>دار نهضة مصر</h3>
+                    <div class="books-count">🕒 تأسست: 1938</div>
+                    <div class="books-count">📖 عدد الكتب: 22 كتاب</div>
+                    <p class="description">تختص بنشر الكتب التعليمية والتربوية وكتب الأطفال</p>
+                    <button class="view-books-btn" onclick="window.location.href='publisher-nahda.html'">عرض الكتب</button>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div style="background: #fff; padding: 25px; border-radius: 10px; margin-top: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+            <h3 style="color: #2c3e50; margin-bottom: 15px;">📊 إحصائيات القسم</h3>
+            <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+                <div>
+                    <h4 style="color: #1abc9c;">🏢 عدد دور النشر</h4>
+                    <p style="font-size: 1.2em; font-weight: bold;">6 دور نشر</p>
+                </div>
+                <div>
+                    <h4 style="color: #27ae60;">📚 إجمالي الكتب</h4>
+                    <p style="font-size: 1.2em; font-weight: bold;">159 كتاب</p>
+                </div>
+                <div>
+                    <h4 style="color: #3498db;">🔄 آخر تحديث</h4>
+                    <p style="font-size: 1.2em; font-weight: bold;">ديسمبر 2025</p>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2025 مكتبة أثر. جميع الحقوق محفوظة.</p>
+        <div class="social">
+            <a href="#">فيسبوك</a>
+            <a href="#">إنستغرام</a>
+            <a href="#">تويتر</a>
+        </div>
+    </footer>
+
+</body>
+</html>

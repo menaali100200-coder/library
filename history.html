@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الكتب التاريخية - مكتبة أثر</title>
+    <style>
+        /* نفس الأنماط السابقة */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            color: #333;
+            line-height: 1.6;
+            direction: rtl;
+        }
+
+        header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        header .logo img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-left: 15px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            background: #34495e;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: #1abc9c;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .page-header h2 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .page-header p {
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        /* شبكة الكتب */
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .book-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .book-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .book-cover {
+            height: 300px;
+            background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 60px;
+        }
+
+        .book-info {
+            padding: 20px;
+        }
+
+        .book-info h3 {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .book-info .author {
+            color: #7f8c8d;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .book-info .category {
+            display: inline-block;
+            background: #f1f2f6;
+            color: #57606f;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        .download-btn {
+            display: block;
+            width: 100%;
+            background: #27ae60;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: background 0.3s;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .download-btn:hover {
+            background: #219653;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-bottom: 30px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #2980b9;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .books-grid {
+                grid-template-columns: 1fr;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر -->
+    <header>
+        <div class="logo">
+            <div>
+                <h1>مكتبة أثر الإلكترونية</h1>
+                <p>وجهتك للمعرفة والثقافة</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- القائمة التنقل -->
+    <nav>
+        <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="history.html" style="background:#1abc9c;">الكتب التاريخية</a></li>
+            <li><a href="science.html">الكتب العلمية</a></li>
+            <li><a href="worldnovels.html">روايات عالمية</a></li>
+            <li><a href="children.html">كتب أطفال</a></li>
+            <li><a href="about.html">حول المكتبة</a></li>
+        </ul>
+    </nav>
+
+    <!-- المحتوى الرئيسي -->
+    <main>
+        <a href="index.html" class="back-btn">← العودة للرئيسية</a>
+        
+        <div class="page-header">
+            <h2>📜 الكتب التاريخية</h2>
+            <p>استكشف أعظم الكتب التاريخية التي تسرد أحداثًا مهمة وشخصيات مؤثرة عبر العصور</p>
+        </div>
+
+        <!-- شبكة الكتب -->
+        <div class="books-grid">
+            
+            <!-- الكتاب 1 -->
+            <div class="book-card">
+                <div class="book-cover">🏛️</div>
+                <div class="book-info">
+                    <span class="category">التاريخ العام</span>
+                    <h3>قصة الحضارة</h3>
+                    <p class="author">ويل ديورانت</p>
+                    <p>سلسلة ضخمة تروي قصة الحضارة الإنسانية منذ بدايتها حتى العصر الحديث</p>
+                    <a href="books/history1.pdf" class="download-btn" download>📥 تحميل الكتاب</a>
+                </div>
+            </div>
+            
+            <!-- الكتاب 2 -->
+            <div class="book-card">
+                <div class="book-cover">👑</div>
+                <div class="book-info">
+                    <span class="category">التاريخ المصري</span>
+                    <h3>تاريخ مصر القديمة</h3>
+                    <p class="author">محمد صبحي</p>
+                    <p>كتاب شامل عن الحضارة المصرية القديمة وملوكها وإنجازاتها</p>
+                    <a href="books/history2.pdf" class="download-btn" download>📥 تحميل الكتاب</a>
+                </div>
+            </div>
+            
+            <!-- الكتاب 3 -->
+            <div class="book-card">
+                <div class="book-cover">⚔️</div>
+                <div class="book-info">
+                    <span class="category">التاريخ الإسلامي</span>
+                    <h3>تاريخ الحروب الصليبية</h3>
+                    <p class="author">قاسم عبده قاسم</p>
+                    <p>تحليل مفصل للحروب الصليبية وأثرها على العالم الإسلامي</p>
+                    <a href="books/history3.pdf" class="download-btn" download>📥 تحميل الكتاب</a>
+                </div>
+            </div>
+            
+            <!-- الكتاب 4 -->
+            <div class="book-card">
+                <div class="book-cover">🗺️</div>
+                <div class="book-info">
+                    <span class="category">التاريخ العربي</span>
+                    <h3>تاريخ العرب المعاصر</h3>
+                    <p class="author">عبد الرحمن الرافعي</p>
+                    <p>دراسة شاملة للتاريخ العربي الحديث والمعاصر</p>
+                    <a href="books/history4.pdf" class="download-btn" download>📥 تحميل الكتاب</a>
+                </div>
+            </div>
+            
+            <!-- الكتاب 5 -->
+            <div class="book-card">
+                <div class="book-cover">🏰</div>
+                <div class="book-info">
+                    <span class="category">تاريخ أوروبا</span>
+                    <h3>تاريخ أوروبا في العصور الوسطى</h3>
+                    <p class="author">أحمد الشنواني</p>
+                    <p>رحلة عبر تاريخ أوروبا في فترة العصور الوسطى</p>
+                    <a href="books/history5.pdf" class="download-btn" download>📥 تحميل الكتاب</a>
+                </div>
+            </div>
+            
+            <!-- الكتاب 6 -->
+            <div class="book-card">
+                <div class="book-cover">📜</div>
+                <div class="book-info">
+                    <span class="category">التاريخ القديم</span>
+                    <h3>تاريخ حضارات العالم</h3>
+                    <p class="author">عبد العزيز صالح</p>
+                    <p>موسوعة تاريخية تشمل جميع حضارات العالم القديم</p>
+                    <a href="books/history6.pdf" class="download-btn" download>📥 تحميل الكتاب</a>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- معلومات القسم -->
+        <div style="background: #fff; padding: 25px; border-radius: 10px; margin-top: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+            <h3 style="color: #2c3e50; margin-bottom: 15px;">📊 إحصائيات القسم</h3>
+            <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+                <div>
+                    <h4 style="color: #e67e22;">📚 عدد الكتب</h4>
+                    <p style="font-size: 1.2em; font-weight: bold;">6 كتب</p>
+                </div>
+                <div>
+                    <h4 style="color: #27ae60;">📁 الصيغة</h4>
+                    <p style="font-size: 1.2em; font-weight: bold;">PDF</p>
+                </div>
+                <div>
+                    <h4 style="color: #3498db;">🔄 آخر تحديث</h4>
+                    <p style="font-size: 1.2em; font-weight: bold;">ديسمبر 2025</p>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+
+    <!-- الفوتر -->
+    <footer>
+        <p>&copy; 2025 مكتبة أثر. جميع الحقوق محفوظة.</p>
+        <div class="social">
+            <a href="#">فيسبوك</a>
+            <a href="#">إنستغرام</a>
+            <a href="#">تويتر</a>
+        </div>
+    </footer>
+
+</body>
+</html>

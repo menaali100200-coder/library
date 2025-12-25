@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا - مكتبة أثر الإلكترونية</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            color: #333;
+            line-height: 1.6;
+            direction: rtl;
+        }
+
+        header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        header .logo img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-left: 15px;
+            border: 3px solid #1abc9c;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            background: #34495e;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: #1abc9c;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 50px;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .page-header h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        /* قسم تواصل سريع */
+        .quick-contact {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .contact-card .icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #3498db;
+        }
+
+        .contact-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .contact-card p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        /* نموذج الاتصال */
+        .contact-form-section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 50px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .contact-form-section h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: #27ae60;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            display: block;
+            margin: 30px auto 0;
+            width: 200px;
+        }
+
+        .submit-btn:hover {
+            background: #219653;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(33, 150, 83, 0.3);
+        }
+
+        /* معلومات المكتبة */
+        .library-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .info-section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .info-section h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.6em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-section li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            color: #666;
+        }
+
+        .info-section li:last-child {
+            border-bottom: none;
+        }
+
+        .info-section li strong {
+            color: #2c3e50;
+            display: inline-block;
+            width: 120px;
+        }
+
+        /* خريطة افتراضية */
+        .map-placeholder {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            height: 250px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-top: 30px;
+        }
+
+        .map-placeholder .icon {
+            font-size: 4em;
+            margin-bottom: 15px;
+        }
+
+        /* أسئلة شائعة */
+        .faq-section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 50px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: #f8f9fa;
+            padding: 20px;
+            font-weight: bold;
+            color: #2c3e50;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #e9ecef;
+        }
+
+        .faq-answer {
+            padding: 20px;
+            background: white;
+            color: #666;
+            display: none;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        .arrow {
+            transition: transform 0.3s;
+        }
+
+        .arrow.active {
+            transform: rotate(180deg);
+        }
+
+        /* زر العودة */
+        .back-btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-bottom: 40px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: background 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(41, 128, 185, 0.3);
+        }
+
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+
+        footer p {
+            margin-bottom: 15px;
+        }
+
+        footer .social {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        footer .social a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.3em;
+            transition: color 0.3s;
+        }
+
+        footer .social a:hover {
+            color: #1abc9c;
+        }
+
+        @media (max-width: 768px) {
+            .quick-contact, .library-info {
+                grid-template-columns: 1fr;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+                padding: 0 20px;
+            }
+            .page-header h2 {
+                font-size: 2.2em;
+            }
+            .contact-form-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+    
+                <h1>مكتبة أثر الإلكترونية</h1>
+                <p>وجهتك للمعرفة والثقافة</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="about.html">حول المكتبة</a></li>
+            <li><a href="contact.html" style="background:#1abc9c;">تواصل معنا</a></li>
+            <li><a href="history.html">الكتب التاريخية</a></li>
+            <li><a href="science.html">الكتب العلمية</a></li>
+            <li><a href="mystery.html">كتب بوليسية</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <a href="index.html" class="back-btn">← العودة للرئيسية</a>
+        
+        <div class="page-header">
+            <h2>تواصل معنا</h2>
+            <p>نحن هنا لمساعدتك! تواصل معنا لأي استفسار أو اقتراح</p>
+        </div>
+
+        <!-- تواصل سريع -->
+        <div class="quick-contact">
+            <div class="contact-card">
+                <div class="icon">📧</div>
+                <h3>البريد الإلكتروني</h3>
+                <p>للأسئلة العامة والاستفسارات</p>
+                <p style="color: #3498db; font-weight: bold;"> athrlib@minalibrary.com</p>
+            </div>
+            
+            <div class="contact-card">
+                <div class="icon">📞</div>
+                <h3>الهاتف</h3>
+                <p>من الأحد إلى الخميس</p>
+                <p style="color: #3498db; font-weight: bold;">+964******</p>
+            </div>
+            
+            <div class="contact-card">
+                <div class="icon">💬</div>
+                <h3>الدعم الفني</h3>
+                <p>مشاكل تقنية أو فنية</p>
+                <p style="color: #3498db; font-weight: bold;">support@minalibrary.com</p>
+            </div>
+        </div>
+
+        <!-- نموذج الاتصال -->
+        <div class="contact-form-section">
+            <h2>📝 أرسل رسالة</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">الاسم الكامل *</label>
+                    <input type="text" id="name" name="name" required placeholder="أدخل اسمك الكامل">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني *</label>
+                    <input type="email" id="email" name="email" required placeholder="example@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">رقم الهاتف</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+964*******">
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">نوع الرسالة *</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">اختر نوع الرسالة</option>
+                        <option value="general">استفسار عام</option>
+                        <option value="technical">دعم فني</option>
+                        <option value="books">اقتراح كتب</option>
+                        <option value="partnership">شراكة وتعاون</option>
+                        <option value="feedback">ملاحظات وشكاوى</option>
+                        <option value="other">أخرى</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">الرسالة *</label>
+                    <textarea id="message" name="message" required placeholder="اكتب رسالتك هنا..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">إرسال الرسالة</button>
+            </form>
+        </div>
+
+        <!-- معلومات المكتبة -->
+
+            
+            <div class="info-section">
+                <h3>👥 أقسام الدعم</h3>
+                <ul>
+                    <li><strong>الدعم الفني:</strong> support@minalibrary.com</li>
+                    <li><strong>المحتوى:</strong> content@minalibrary.com</li>
+                    <li><strong>التسويق:</strong> marketing@minalibrary.com</li>
+                    <li><strong>الشراكة:</strong> partnership@minalibrary.com</li>
+                    <li><strong>الشكاوى:</strong> complaints@minalibrary.com</li>
+                </ul>
+            </div>
+        </div>
+
+ 
+
+        <!-- أسئلة شائعة -->
+        <div class="faq-section">
+            <h2>❓ أسئلة شائعة</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(1)">
+                    <span>كيف يمكنني تحميل الكتب من المكتبة؟</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer" id="faq1">
+                    <p>ببساطة انتقل للقسم المطلوب، اختر الكتاب، ثم اضغط على زر "تحميل الكتاب". الكتب متاحة بصيغة PDF ويمكن تحميلها مباشرة.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(2)">
+                    <span>هل الخدمة مجانية تماماً؟</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer" id="faq2">
+                    <p>نعم، جميع خدمات المكتبة مجانية بالكامل ولا توجد أي رسوم للتحميل أو القراءة.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(3)">
+                    <span>كيف أقترح إضافة كتاب جديد؟</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer" id="faq3">
+                    <p>يمكنك استخدام نموذج الاتصال أعلاه واختيار "اقتراح كتب" من قائمة نوع الرسالة، وسنقوم بمراجعة اقتراحك.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(4)">
+                    <span>كم تستغرق وقت الرد على الرسائل؟</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer" id="faq4">
+                    <p>نرد على جميع الرسائل خلال 24-48 ساعة عمل، وقد يستغرق الرد وقتاً أطول خلال العطلات الرسمية.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(5)">
+                    <span>هل يمكنني نشر كتب من تأليفي؟</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer" id="faq5">
+                    <p>نعم، نرحب بالتعاون مع المؤلفين. اتصل بقسم الشراكة على partnership@minalibrary.com</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 مكتبة أثر الإلكترونية. جميع الحقوق محفوظة.</p>
+        <p>📧 للتواصل: athrlib@minalibrary.com | 📞 الهاتف:+964 ********</p>
+        <div class="social">
+            <a href="#"> فيسبوك</a>
+            <a href="#"> إنستغرام</a>
+            <a href="#"> تويتر</a>
+            <a href="#"> لينكدإن</a>
+            <a href="#"> يوتيوب</a>
+        </div>
+        <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.8;">
+            خدمة العملاء متاحة من الأحد إلى الخميس 9:00 ص - 5:00 م
+        </p>
+    </footer>
+
+    <script>
+        // دالة لعرض/إخفاء الأسئلة الشائعة
+        function toggleFAQ(num) {
+            const answer = document.getElementById('faq' + num);
+            const arrow = answer.previousElementSibling.querySelector('.arrow');
+            
+            answer.classList.toggle('active');
+            arrow.classList.toggle('active');
+        }
+
+        // معالجة نموذج الاتصال
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const subject = document.getElementById('subject').value;
+            
+            alert(`شكراً ${name}! تم استلام رسالتك بنجاح. سنقوم بالرد عليك قريباً.`);
+            
+            // إعادة تعيين النموذج
+            this.reset();
+        });
+
+        // فتح الأسئلة الأولى تلقائياً
+        window.onload = function() {
+            toggleFAQ(1);
+        }
+    </script>
+
+</body>
+</html>
